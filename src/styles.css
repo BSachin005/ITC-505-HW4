@@ -1,21 +1,84 @@
-* {
-  font-family: Arial, Helvetica, sans-serif;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    transition: background-color 0.5s;
 }
 
-html, body {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  background-color: #fff;
+h1 {
+    text-align: center;
+    color: #D47864;
+    animation: moveLeftRight 2s infinite alternate, colorChange 2s infinite alternate;
 }
 
-main {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
+.author-info {
+    text-align: center;
+    font-size: 16px;
+    color: #75D464;
 }
 
-main > h1 {
-  text-align: center;
-  font-size: 3.5em;
+h2, h3 {
+    color: #649DD4;
+    animation: moveLeftRight 2s infinite alternate-reverse, colorChange 2s infinite alternate;
+}
+
+p, ul {
+    color: #5813D2;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+article {
+    background-color: #F5FBFC;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    transition: background-color 0.5s;
+}
+
+.addendum {
+    background-color: #EBEAB2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: shadowAnimation 2s infinite alternate;
+}
+
+.addendum-content {
+    font-size: 18px;
+    color: #F07705;
+}
+
+@keyframes moveLeftRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes shadowAnimation {
+    0% {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    100% {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
 }
